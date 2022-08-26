@@ -10,24 +10,24 @@
 size_t strLen(const char* str);
 
 /**
- * @brief A function that copies the contents of one line to\
+ * @brief A function that copies the contents of one line to \
  * another within a limited number of characters
- * @param [in] origStr The string to copy to
- * @param [in] copyStr The string that is being copied
+ * @param [in] dest The string to copy to
+ * @param [in] source The string that is being copied
  * @param [in] Limit on the number of characters
  * @return A pointer to the row to which the data is copied
  */
-char* strnCpy(char* origStr, const char* copyStr, size_t symbCount);
+char* strnCpy(char* dest, const char* source, size_t symbCount);
 
 /**
- * @brief A function that copies the contents of one line to the end of\
+ * @brief A function that copies the contents of one line to the end of \
  * another within a limited number of characters
- * @param [in] origStr The string to copy to
- * @param [in] copyStr The string that is being copied
+ * @param [in] dest The string to copy to
+ * @param [in] source The string that is being copied
  * @param [in] Limit on the number of characters
  * @return A pointer to the row to which the data is copied
  */
-char* strnCat(char* origStr, const char* copyStr, size_t symbCount);
+char* strnCat(char* dest, const char* source, size_t symbCount);
 
 /**
  * @brief Search for the first occurrence of string searchable in string source
@@ -70,15 +70,15 @@ int putStr (const char* str);
  * @param [in]source - pointer to the string source of the copied data
  * @return The function returns a pointer to the row to which the data is copied
  */
-char* strCpy(char* destination, const char* source);
+char* strCpy(char* dest, const char* source);
 
 /**
  * @brief Ñombining strings
- * @param [in] origStr - a pointer to the array to which the string will be added
- * @param [in] copyStr - a pointer to the array from which the string will be copied
+ * @param [in] dest - a pointer to the array to which the string will be added
+ * @param [in] source - a pointer to the array from which the string will be copied
  * @return The function returns a pointer to the array to which the string is added
  */
-char* strCat(char* origStr, const char* copyStr);
+char* strCat(char* dest, const char* source);
 
  /**
  * @brief Duplication of lines with allocation of memory for a new line.

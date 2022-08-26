@@ -8,10 +8,10 @@
 \item 
 size\+\_\+t \mbox{\hyperlink{str_8h_acfedb8526e4ad77ebb32cb062cfe309d}{str\+Len}} (const char $\ast$str)
 \begin{DoxyCompactList}\small\item\em A function that calculates the length of a string. \end{DoxyCompactList}\item 
-char $\ast$ \mbox{\hyperlink{str_8h_aec1d48efeb6d1cc45b21b413e5ba7cf1}{strn\+Cpy}} (char $\ast$orig\+Str, const char $\ast$copy\+Str, size\+\_\+t symb\+Count)
-\begin{DoxyCompactList}\small\item\em A function that copies the contents of one line to\textbackslash{} another within a limited number of characters. \end{DoxyCompactList}\item 
-char $\ast$ \mbox{\hyperlink{str_8h_ad6c516e6d350a0f1a3796b172d47dbaf}{strn\+Cat}} (char $\ast$orig\+Str, const char $\ast$copy\+Str, size\+\_\+t symb\+Count)
-\begin{DoxyCompactList}\small\item\em A function that copies the contents of one line to the end of\textbackslash{} another within a limited number of characters. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{str_8h_a68100c2f0f7fb5dcf25fc36dd008ec98}{strn\+Cpy}} (char $\ast$dest, const char $\ast$source, size\+\_\+t symb\+Count)
+\begin{DoxyCompactList}\small\item\em A function that copies the contents of one line to \textbackslash{} another within a limited number of characters. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{str_8h_a25beebb285d101c3c90fb88d04cb7e05}{strn\+Cat}} (char $\ast$dest, const char $\ast$source, size\+\_\+t symb\+Count)
+\begin{DoxyCompactList}\small\item\em A function that copies the contents of one line to the end of \textbackslash{} another within a limited number of characters. \end{DoxyCompactList}\item 
 const char $\ast$ \mbox{\hyperlink{str_8h_aa3088785a7a97899b21ddc257d5d815c}{str\+Str}} (const char $\ast$source, const char $\ast$searchable)
 \begin{DoxyCompactList}\small\item\em Search for the first occurrence of string searchable in string source. \end{DoxyCompactList}\item 
 char $\ast$ \mbox{\hyperlink{str_8h_a1f58b1ac9ba06702ef04798bd05612c9}{str\+Tok}} (char $\ast$str, const char $\ast$sep)
@@ -20,9 +20,9 @@ const char $\ast$ \mbox{\hyperlink{str_8h_ae96cf0752eb41030f56b2471dc160e0c}{str
 \begin{DoxyCompactList}\small\item\em Search for the first occurrence of a character in a string. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{str_8h_a8af38dae7a814612c5df018b81e42c99}{put\+Str}} (const char $\ast$str)
 \begin{DoxyCompactList}\small\item\em Output of a string to a standard output stream. \end{DoxyCompactList}\item 
-char $\ast$ \mbox{\hyperlink{str_8h_a4ed891f268237bd80f7c703bda72afe9}{str\+Cpy}} (char $\ast$destination, const char $\ast$source)
+char $\ast$ \mbox{\hyperlink{str_8h_a401a2569e0b69c43d7fd42e0aade2e0c}{str\+Cpy}} (char $\ast$dest, const char $\ast$source)
 \item 
-char $\ast$ \mbox{\hyperlink{str_8h_a54657d58b4f99113ba42d9e8c700cec3}{str\+Cat}} (char $\ast$orig\+Str, const char $\ast$copy\+Str)
+char $\ast$ \mbox{\hyperlink{str_8h_a8446be138588811b8d69396ce108d3a5}{str\+Cat}} (char $\ast$dest, const char $\ast$source)
 \begin{DoxyCompactList}\small\item\em Ñombining strings. \end{DoxyCompactList}\item 
 char $\ast$ \mbox{\hyperlink{str_8h_acab33c99033c691d9a6d903066c1bb81}{str\+Dup}} (const char $\ast$str)
 \begin{DoxyCompactList}\small\item\em Duplication of lines with allocation of memory for a new line. \end{DoxyCompactList}\item 
@@ -95,11 +95,11 @@ Output of a string to a standard output stream.
 \begin{DoxyReturn}{Returns}
 EOF -\/ in case of an error. Not a negative number if the output was successful 
 \end{DoxyReturn}
-\mbox{\Hypertarget{str_8h_a54657d58b4f99113ba42d9e8c700cec3}\label{str_8h_a54657d58b4f99113ba42d9e8c700cec3}} 
+\mbox{\Hypertarget{str_8h_a8446be138588811b8d69396ce108d3a5}\label{str_8h_a8446be138588811b8d69396ce108d3a5}} 
 \index{str.h@{str.h}!strCat@{strCat}}
 \index{strCat@{strCat}!str.h@{str.h}}
 \doxysubsubsection{\texorpdfstring{strCat()}{strCat()}}
-{\footnotesize\ttfamily char$\ast$ str\+Cat (\begin{DoxyParamCaption}\item[{char $\ast$}]{orig\+Str,  }\item[{const char $\ast$}]{copy\+Str }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char$\ast$ str\+Cat (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{const char $\ast$}]{source }\end{DoxyParamCaption})}
 
 
 
@@ -107,9 +107,9 @@ EOF -\/ in case of an error. Not a negative number if the output was successful
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em orig\+Str} & -\/ a pointer to the array to which the string will be added \\
+\mbox{\texttt{ in}}  & {\em dest} & -\/ a pointer to the array to which the string will be added \\
 \hline
-\mbox{\texttt{ in}}  & {\em copy\+Str} & -\/ a pointer to the array from which the string will be copied \\
+\mbox{\texttt{ in}}  & {\em source} & -\/ a pointer to the array from which the string will be copied \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -135,11 +135,11 @@ Search for the first occurrence of a character in a string.
 \begin{DoxyReturn}{Returns}
 A pointer to the desired character, if it is found in the string str, otherwise NULL. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{str_8h_a4ed891f268237bd80f7c703bda72afe9}\label{str_8h_a4ed891f268237bd80f7c703bda72afe9}} 
+\mbox{\Hypertarget{str_8h_a401a2569e0b69c43d7fd42e0aade2e0c}\label{str_8h_a401a2569e0b69c43d7fd42e0aade2e0c}} 
 \index{str.h@{str.h}!strCpy@{strCpy}}
 \index{strCpy@{strCpy}!str.h@{str.h}}
 \doxysubsubsection{\texorpdfstring{strCpy()}{strCpy()}}
-{\footnotesize\ttfamily char$\ast$ str\+Cpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{destination,  }\item[{const char $\ast$}]{source }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char$\ast$ str\+Cpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{const char $\ast$}]{source }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -184,21 +184,21 @@ A function that calculates the length of a string.
 \begin{DoxyReturn}{Returns}
 Length of a string 
 \end{DoxyReturn}
-\mbox{\Hypertarget{str_8h_ad6c516e6d350a0f1a3796b172d47dbaf}\label{str_8h_ad6c516e6d350a0f1a3796b172d47dbaf}} 
+\mbox{\Hypertarget{str_8h_a25beebb285d101c3c90fb88d04cb7e05}\label{str_8h_a25beebb285d101c3c90fb88d04cb7e05}} 
 \index{str.h@{str.h}!strnCat@{strnCat}}
 \index{strnCat@{strnCat}!str.h@{str.h}}
 \doxysubsubsection{\texorpdfstring{strnCat()}{strnCat()}}
-{\footnotesize\ttfamily char$\ast$ strn\+Cat (\begin{DoxyParamCaption}\item[{char $\ast$}]{orig\+Str,  }\item[{const char $\ast$}]{copy\+Str,  }\item[{size\+\_\+t}]{symb\+Count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char$\ast$ strn\+Cat (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{const char $\ast$}]{source,  }\item[{size\+\_\+t}]{symb\+Count }\end{DoxyParamCaption})}
 
 
 
-A function that copies the contents of one line to the end of\textbackslash{} another within a limited number of characters. 
+A function that copies the contents of one line to the end of \textbackslash{} another within a limited number of characters. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em orig\+Str} & The string to copy to \\
+\mbox{\texttt{ in}}  & {\em dest} & The string to copy to \\
 \hline
-\mbox{\texttt{ in}}  & {\em copy\+Str} & The string that is being copied \\
+\mbox{\texttt{ in}}  & {\em source} & The string that is being copied \\
 \hline
 \mbox{\texttt{ in}}  & {\em Limit} & on the number of characters \\
 \hline
@@ -206,21 +206,21 @@ A function that copies the contents of one line to the end of\textbackslash{} an
 \begin{DoxyReturn}{Returns}
 A pointer to the row to which the data is copied 
 \end{DoxyReturn}
-\mbox{\Hypertarget{str_8h_aec1d48efeb6d1cc45b21b413e5ba7cf1}\label{str_8h_aec1d48efeb6d1cc45b21b413e5ba7cf1}} 
+\mbox{\Hypertarget{str_8h_a68100c2f0f7fb5dcf25fc36dd008ec98}\label{str_8h_a68100c2f0f7fb5dcf25fc36dd008ec98}} 
 \index{str.h@{str.h}!strnCpy@{strnCpy}}
 \index{strnCpy@{strnCpy}!str.h@{str.h}}
 \doxysubsubsection{\texorpdfstring{strnCpy()}{strnCpy()}}
-{\footnotesize\ttfamily char$\ast$ strn\+Cpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{orig\+Str,  }\item[{const char $\ast$}]{copy\+Str,  }\item[{size\+\_\+t}]{symb\+Count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char$\ast$ strn\+Cpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{const char $\ast$}]{source,  }\item[{size\+\_\+t}]{symb\+Count }\end{DoxyParamCaption})}
 
 
 
-A function that copies the contents of one line to\textbackslash{} another within a limited number of characters. 
+A function that copies the contents of one line to \textbackslash{} another within a limited number of characters. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em orig\+Str} & The string to copy to \\
+\mbox{\texttt{ in}}  & {\em dest} & The string to copy to \\
 \hline
-\mbox{\texttt{ in}}  & {\em copy\+Str} & The string that is being copied \\
+\mbox{\texttt{ in}}  & {\em source} & The string that is being copied \\
 \hline
 \mbox{\texttt{ in}}  & {\em Limit} & on the number of characters \\
 \hline

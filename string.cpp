@@ -8,46 +8,46 @@ size_t strLen(const char*  str)
 
     while (*str)
     {
-        strSize++;
-        str++;
+        ++strSize;
+        ++str;
     }
 
     return strSize;
 }
 
-char* strnCpy(char* origStr, const char* copyStr, size_t symbCount)
+char* strnCpy(char* dest, const char* source, size_t symbCount)
 {
-    assert (origStr != NULL);
-    assert (copyStr != NULL);
-    assert (origStr != copyStr);
+    assert (dest   != NULL);
+    assert (source != NULL);
+    assert (dest   != source);
 
-    char* pOrig = origStr;
+    char* ptrDest = dest;
 
-    while (*copyStr && symbCount--)
+    while (*source && symbCount--)
     {
-        *origStr = *copyStr;
-        origStr++;
-        copyStr++;
+        *dest = *source;
+        ++dest;
+        ++source;
     }
 
-    *origStr = '\0';
+    *dest = '\0';
 
-    return pOrig;
+    return ptrDest;
 }
 
-char* strnCat(char* origStr, const char* copyStr, size_t symbCount)
+char* strnCat(char* dest, const char* source, size_t symbCount)
 {
-    assert (origStr != NULL);
-    assert (copyStr != NULL);
+    assert (dest    != NULL);
+    assert (source != NULL);
 
-    strnCpy(origStr + strLen(origStr), copyStr, symbCount);
+    strnCpy(dest + strLen(dest), source, symbCount);
 
-    return origStr;
+    return dest;
 }
 
 const char* strStr(const char* source, const char* searchable)
 {
-    assert (source != NULL);
+    assert (source     != NULL);
     assert (searchable != NULL);
 
     const char* pSearch = searchable;
@@ -82,13 +82,13 @@ char* strTok(char* str, const char* sep)
 
     char* pStr = str;
 
-    if (!(*pStr))
+    if (*pStr == '\0')
     {
         return NULL;
     }
 
     size_t sepStart = 0;
-    char* sepFrom = NULL;
+    char*  sepFrom  = NULL;
 
     while (*str)
     {
@@ -96,7 +96,7 @@ char* strTok(char* str, const char* sep)
         {
             if (!sepStart)
             {
-                sepFrom = str;
+                sepFrom  = str;
                 sepStart = 1;
             }
 
@@ -109,7 +109,7 @@ char* strTok(char* str, const char* sep)
             return str;
         }
 
-        str++;
+        ++str;
     }
 
     return NULL;
@@ -117,6 +117,8 @@ char* strTok(char* str, const char* sep)
 
 const char* strChr(const char* str, int ch)
 {
+    assert (str != NULL);
+
     while (*str)
     {
         if (*str == ch)
@@ -124,7 +126,7 @@ const char* strChr(const char* str, int ch)
             return str;
         }
 
-        str++;
+        ++str;
     }
 
     return NULL;
@@ -132,7 +134,7 @@ const char* strChr(const char* str, int ch)
 
 int putStr(const char* str)
 {
-    if (*str == '\0' || str == NULL)
+    if (str == NULL || *str == '\0')
     {
         return EOF;
     }
@@ -140,7 +142,7 @@ int putStr(const char* str)
     {
         while (*str)
         {
-            printf("%c", *str);
+            putchar(*str);
             str++;
         }
 
@@ -150,54 +152,56 @@ int putStr(const char* str)
     }
 }
 
-char* strCpy(char* origStr, const char* copyStr)
+char* strCpy(char* dest, const char* source)
 {
-    assert (origStr != NULL);
-    assert (copyStr != NULL);
-    assert (origStr != copyStr);
+    assert (dest   != NULL);
+    assert (source != NULL);
+    assert (dest   != source);
 
-    char* pOrig = origStr;
+    char* ptrDest = dest;
 
-    while (*copyStr)
+    while (*source)
     {
-        *origStr = *copyStr;
-        origStr++;
-        copyStr++;
+        *dest = *source;
+        ++source;
+        ++dest;
     }
 
-    *origStr = '\0';
+    *dest = '\0';
 
-    return pOrig;
+    return ptrDest;
 }
 
-char* strCat(char* origStr, const char* copyStr)
+char* strCat(char* dest, const char* source)
 {
-    assert (origStr != NULL);
-    assert (copyStr != NULL);
+    assert (dest   != NULL);
+    assert (source != NULL);
 
-    strCpy(origStr + strLen(origStr), copyStr);
+    strCpy(dest + strLen(dest), source);
 
-    return origStr;
+    return dest;
 }
 
 char* fgetStr(char* str, int n, FILE* stream)
 {
-    if (stream == NULL or str == NULL)
+    if (stream == NULL || str == NULL)
     {
         return NULL;
     }
 
     char* pStr = str;
-    char symbol = 0;
-    int sLen = n;
+    int symbol = 0;
+    int   sLen = n;
+    int index = 0;
 
-    fscanf(stream, "%c", &symbol);
+    symbol = fgetc(stream);
     while (n >= 0 && symbol != '\n' && symbol != EOF)
     {
-        *pStr = symbol;
-        fscanf(stream, "%c", &symbol);
+        *pStr  = symbol;
+        symbol = fgetc(stream);
         pStr++;
         n--;
+        index++;
     }
 
     if (symbol == EOF && n == sLen)
@@ -205,12 +209,23 @@ char* fgetStr(char* str, int n, FILE* stream)
         return NULL;
     }
 
-    *(str + sLen) = '\0';
+    if (index < sLen)
+    {
+        *(str + index)     = '\n';
+        *(str + index + 1) = '\0';
+    }
+    else
+    {
+    *(str + index) = '\0';
+    }
+
     return str;
 }
 
 char* strDup(const char* str)
 {
+    assert (str != NULL);
+
     char *dupStr = (char *) malloc(sizeof (char) * (strLen(str)+1));
 
     return strCpy(dupStr, str);
@@ -223,18 +238,19 @@ FILE* myGetline(FILE* stream, char* str, char delim)
     if (stream == NULL)
         return stream;
 
-    char* pStr = str;
-    char symbol = 0;
-    int index = 0;
+    char*  pStr   = str;
+    int    symbol = 0;
+    int    index  = 0;
 
-    fscanf(stream, "%c", &symbol);
+    symbol = fgetc(stream);
 
     while (symbol != delim && symbol != EOF)
     {
-        *pStr = symbol;
-        fscanf(stream, "%c", &symbol);
-        pStr++;
-        index++;
+        *pStr  = symbol;
+        symbol = fgetc(stream);
+
+        ++pStr;
+        ++index;
     }
 
     *(str + index) = '\0';

@@ -53,6 +53,7 @@ int main(void)
     printf("Function strDup(line8) result:\n%s\n", line9);
     free(line9);
 
+
     printf("Function fgetStr(line9, 10, stdin) result:\n");
     fgetStr(line9, 10, stdin);
     printf("%s\n", line9);
@@ -62,7 +63,14 @@ int main(void)
     myGetline(stdin, line10, '<');
     printf("%s\n", line10);
 
+    fflush(stdin);
+
     printf("\nThe End\n");
+
+    char newline[20] = "hello";
+    fgetStr(newline, 3, stdin);
+    printf("%s\n", newline);
+
 
 
     return 0;

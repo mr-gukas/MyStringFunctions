@@ -1,0 +1,276 @@
+\hypertarget{string_8cpp}{}\doxysection{string.\+cpp File Reference}
+\label{string_8cpp}\index{string.cpp@{string.cpp}}
+{\ttfamily \#include \char`\"{}str.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{string_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\item 
+size\+\_\+t \mbox{\hyperlink{string_8cpp_acfedb8526e4ad77ebb32cb062cfe309d}{str\+Len}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em A function that calculates the length of a string. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{string_8cpp_aec1d48efeb6d1cc45b21b413e5ba7cf1}{strn\+Cpy}} (char $\ast$orig\+Str, const char $\ast$copy\+Str, size\+\_\+t symb\+Count)
+\begin{DoxyCompactList}\small\item\em A function that copies the contents of one line to\textbackslash{} another within a limited number of characters. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{string_8cpp_ad6c516e6d350a0f1a3796b172d47dbaf}{strn\+Cat}} (char $\ast$orig\+Str, const char $\ast$copy\+Str, size\+\_\+t symb\+Count)
+\begin{DoxyCompactList}\small\item\em A function that copies the contents of one line to the end of\textbackslash{} another within a limited number of characters. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{string_8cpp_aa3088785a7a97899b21ddc257d5d815c}{str\+Str}} (const char $\ast$source, const char $\ast$searchable)
+\begin{DoxyCompactList}\small\item\em Search for the first occurrence of string searchable in string source. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{string_8cpp_a1f58b1ac9ba06702ef04798bd05612c9}{str\+Tok}} (char $\ast$str, const char $\ast$sep)
+\begin{DoxyCompactList}\small\item\em Splitting a string into parts by the specified separator. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{string_8cpp_ae96cf0752eb41030f56b2471dc160e0c}{str\+Chr}} (const char $\ast$str, int ch)
+\begin{DoxyCompactList}\small\item\em Search for the first occurrence of a character in a string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{string_8cpp_a8af38dae7a814612c5df018b81e42c99}{put\+Str}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Output of a string to a standard output stream. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{string_8cpp_a746e28e7c543a0fa5e7f8ca5e49c506b}{str\+Cpy}} (char $\ast$orig\+Str, const char $\ast$copy\+Str)
+\item 
+char $\ast$ \mbox{\hyperlink{string_8cpp_a54657d58b4f99113ba42d9e8c700cec3}{str\+Cat}} (char $\ast$orig\+Str, const char $\ast$copy\+Str)
+\begin{DoxyCompactList}\small\item\em Ñombining strings. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{string_8cpp_a273264a6ac582571a41d24994b3cf6ff}{fget\+Str}} (char $\ast$str, int n, FILE $\ast$stream)
+\begin{DoxyCompactList}\small\item\em Reading a string from a specified data stream. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{string_8cpp_acab33c99033c691d9a6d903066c1bb81}{str\+Dup}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Duplication of lines with allocation of memory for a new line. \end{DoxyCompactList}\item 
+FILE $\ast$ \mbox{\hyperlink{string_8cpp_ad3cdc2c89d3b37aa20e2e618a23c3321}{my\+Getline}} (FILE $\ast$stream, char $\ast$str, char delim)
+\begin{DoxyCompactList}\small\item\em Reads characters from an input stream and places them into a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{string_8cpp_a273264a6ac582571a41d24994b3cf6ff}\label{string_8cpp_a273264a6ac582571a41d24994b3cf6ff}} 
+\index{string.cpp@{string.cpp}!fgetStr@{fgetStr}}
+\index{fgetStr@{fgetStr}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{fgetStr()}{fgetStr()}}
+{\footnotesize\ttfamily char$\ast$ fget\+Str (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{int}]{n,  }\item[{FILE $\ast$}]{stream }\end{DoxyParamCaption})}
+
+
+
+Reading a string from a specified data stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & -\/ pointer to the array in which the read string will be placed \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & -\/ is the maximum allowed length of the read string \\
+\hline
+\mbox{\texttt{ in}}  & {\em stream} & -\/ pointer to the data stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+In case of successful reading of the string, a pointer to the array in which the read data is placed is returned. Or returns NULL in other ways 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{string_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{string.cpp@{string.cpp}!main@{main}}
+\index{main@{main}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{string_8cpp_ad3cdc2c89d3b37aa20e2e618a23c3321}\label{string_8cpp_ad3cdc2c89d3b37aa20e2e618a23c3321}} 
+\index{string.cpp@{string.cpp}!myGetline@{myGetline}}
+\index{myGetline@{myGetline}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{myGetline()}{myGetline()}}
+{\footnotesize\ttfamily FILE$\ast$ my\+Getline (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{stream,  }\item[{char $\ast$}]{str,  }\item[{char}]{delim = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Reads characters from an input stream and places them into a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stream} & -\/ object from which characters are extracted \\
+\hline
+\mbox{\texttt{ in}}  & {\em str} & -\/ object where the extracted line is stored \\
+\hline
+\mbox{\texttt{ in}}  & {\em delim} & -\/ the delimitation character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The same as parameter stream 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_a8af38dae7a814612c5df018b81e42c99}\label{string_8cpp_a8af38dae7a814612c5df018b81e42c99}} 
+\index{string.cpp@{string.cpp}!putStr@{putStr}}
+\index{putStr@{putStr}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{putStr()}{putStr()}}
+{\footnotesize\ttfamily int put\+Str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Output of a string to a standard output stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & -\/ pointer to the line to be output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+EOF -\/ in case of an error. Not a negative number if the output was successful 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_a54657d58b4f99113ba42d9e8c700cec3}\label{string_8cpp_a54657d58b4f99113ba42d9e8c700cec3}} 
+\index{string.cpp@{string.cpp}!strCat@{strCat}}
+\index{strCat@{strCat}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strCat()}{strCat()}}
+{\footnotesize\ttfamily char$\ast$ str\+Cat (\begin{DoxyParamCaption}\item[{char $\ast$}]{orig\+Str,  }\item[{const char $\ast$}]{copy\+Str }\end{DoxyParamCaption})}
+
+
+
+Ñombining strings. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em orig\+Str} & -\/ a pointer to the array to which the string will be added \\
+\hline
+\mbox{\texttt{ in}}  & {\em copy\+Str} & -\/ a pointer to the array from which the string will be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns a pointer to the array to which the string is added 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_ae96cf0752eb41030f56b2471dc160e0c}\label{string_8cpp_ae96cf0752eb41030f56b2471dc160e0c}} 
+\index{string.cpp@{string.cpp}!strChr@{strChr}}
+\index{strChr@{strChr}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strChr()}{strChr()}}
+{\footnotesize\ttfamily const char$\ast$ str\+Chr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{int}]{ch }\end{DoxyParamCaption})}
+
+
+
+Search for the first occurrence of a character in a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & Pointer to the string in which the search will be performed \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch} & The code of the desired character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the desired character, if it is found in the string str, otherwise NULL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_a746e28e7c543a0fa5e7f8ca5e49c506b}\label{string_8cpp_a746e28e7c543a0fa5e7f8ca5e49c506b}} 
+\index{string.cpp@{string.cpp}!strCpy@{strCpy}}
+\index{strCpy@{strCpy}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strCpy()}{strCpy()}}
+{\footnotesize\ttfamily char$\ast$ str\+Cpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{destination,  }\item[{const char $\ast$}]{source }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em destination} & -\/ a pointer to the line to which the data will be copied \\
+\hline
+\mbox{\texttt{ in}}  & {\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{string_8cpp_acab33c99033c691d9a6d903066c1bb81}\label{string_8cpp_acab33c99033c691d9a6d903066c1bb81}} 
+\index{string.cpp@{string.cpp}!strDup@{strDup}}
+\index{strDup@{strDup}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strDup()}{strDup()}}
+{\footnotesize\ttfamily char$\ast$ str\+Dup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Duplication of lines with allocation of memory for a new line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & -\/ pointer to the duplicated string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL -\/ if it is not possible to allocate memory for a new line or copy the line pointed to by the argument str. A pointer to a duplicate string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_acfedb8526e4ad77ebb32cb062cfe309d}\label{string_8cpp_acfedb8526e4ad77ebb32cb062cfe309d}} 
+\index{string.cpp@{string.cpp}!strLen@{strLen}}
+\index{strLen@{strLen}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strLen()}{strLen()}}
+{\footnotesize\ttfamily size\+\_\+t str\+Len (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+A function that calculates the length of a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em A} & pointer to the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of a string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_ad6c516e6d350a0f1a3796b172d47dbaf}\label{string_8cpp_ad6c516e6d350a0f1a3796b172d47dbaf}} 
+\index{string.cpp@{string.cpp}!strnCat@{strnCat}}
+\index{strnCat@{strnCat}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strnCat()}{strnCat()}}
+{\footnotesize\ttfamily char$\ast$ strn\+Cat (\begin{DoxyParamCaption}\item[{char $\ast$}]{orig\+Str,  }\item[{const char $\ast$}]{copy\+Str,  }\item[{size\+\_\+t}]{symb\+Count }\end{DoxyParamCaption})}
+
+
+
+A function that copies the contents of one line to the end of\textbackslash{} another within a limited number of characters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em orig\+Str} & The string to copy to \\
+\hline
+\mbox{\texttt{ in}}  & {\em copy\+Str} & The string that is being copied \\
+\hline
+\mbox{\texttt{ in}}  & {\em Limit} & on the number of characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the row to which the data is copied 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_aec1d48efeb6d1cc45b21b413e5ba7cf1}\label{string_8cpp_aec1d48efeb6d1cc45b21b413e5ba7cf1}} 
+\index{string.cpp@{string.cpp}!strnCpy@{strnCpy}}
+\index{strnCpy@{strnCpy}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strnCpy()}{strnCpy()}}
+{\footnotesize\ttfamily char$\ast$ strn\+Cpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{orig\+Str,  }\item[{const char $\ast$}]{copy\+Str,  }\item[{size\+\_\+t}]{symb\+Count }\end{DoxyParamCaption})}
+
+
+
+A function that copies the contents of one line to\textbackslash{} another within a limited number of characters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em orig\+Str} & The string to copy to \\
+\hline
+\mbox{\texttt{ in}}  & {\em copy\+Str} & The string that is being copied \\
+\hline
+\mbox{\texttt{ in}}  & {\em Limit} & on the number of characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the row to which the data is copied 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_aa3088785a7a97899b21ddc257d5d815c}\label{string_8cpp_aa3088785a7a97899b21ddc257d5d815c}} 
+\index{string.cpp@{string.cpp}!strStr@{strStr}}
+\index{strStr@{strStr}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strStr()}{strStr()}}
+{\footnotesize\ttfamily const char$\ast$ str\+Str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{source,  }\item[{const char $\ast$}]{searchable }\end{DoxyParamCaption})}
+
+
+
+Search for the first occurrence of string searchable in string source. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em source} & The string in which the search is performed \\
+\hline
+\mbox{\texttt{ in}}  & {\em searchable} & Substring to search in a string source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first occurrence in source of any sequence\textbackslash{} of characters specified in searchable. Null pointer if searchable character\textbackslash{} sequence is not included in source 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8cpp_a1f58b1ac9ba06702ef04798bd05612c9}\label{string_8cpp_a1f58b1ac9ba06702ef04798bd05612c9}} 
+\index{string.cpp@{string.cpp}!strTok@{strTok}}
+\index{strTok@{strTok}!string.cpp@{string.cpp}}
+\doxysubsubsection{\texorpdfstring{strTok()}{strTok()}}
+{\footnotesize\ttfamily char$\ast$ str\+Tok (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{const char $\ast$}]{sep }\end{DoxyParamCaption})}
+
+
+
+Splitting a string into parts by the specified separator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & -\/ pointer to the split line \\
+\hline
+\mbox{\texttt{ in}}  & {\em sep} & -\/ pointer to a string containing a set of delimiter characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL -\/ if the string str cannot be divided into parts. Pointer to the first character of the selected part of the string. 
+\end{DoxyReturn}
